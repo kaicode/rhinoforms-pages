@@ -1,0 +1,41 @@
+#header_wrap .inner {
+	padding-top: 30px
+}
+#front_page #header_wrap .inner {
+	padding-top: 50px
+}
+
+#section_title h2 {
+	padding: 0;
+	margin: 0;
+}
+
+#section_title {
+	padding: 0;
+}
+#section_title_wrap {
+	background-color: grey;
+}
+
+#rf_resources {
+	background-color: lightBlue;
+	padding: 27px;
+	padding-top: 15px;
+}
+#rf_resources h2 {
+	font-size: 25px;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 8px;
+}
+#rf_resources h3 {
+	font-size: 17px;
+	margin: 0;
+}
+#rf_resources ul {
+	margin: 0;
+}
+#rf_resources li {
+	font-size: 15px;
+}
+
