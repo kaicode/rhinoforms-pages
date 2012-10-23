@@ -5,6 +5,16 @@
 	padding-top: 50px
 }
 
+#header_wrap h1 {
+	display: inline;
+}
+
+#header_wrap img {
+	width: 65px;
+	position: absolute;
+	margin-left: 7px;
+}
+
 #section_title h2 {
 	padding: 0;
 	margin: 0;
