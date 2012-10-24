@@ -32,7 +32,53 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p>...</p>
+      	<h1>Rhinoforms: The Basics</h1>
+      	
+        <h3>Who Rhinoforms for?</h3>
+        <p>Rhinoforms is for anyone with basic HTML and JavaScript skills who wants to capture user input.</p>
+        
+        <h3>What can Rhinoforms do?</h3>
+        <p>Rhinoforms captures form data as an XML document.</p>
+        <p>Form validation can be provided based on pre-defined keywords (required, email, pattern, etc) or short JavaScript functions referencing other fields.</p>
+        <p>Validation is run in the browser for a quick response time, and for bullet-proof security validation is run again on the server.</p>
+        <p>Rhinoforms can inject values from the XML document into any part of a form, not just the input fields.</p>
+        <p>Rhinoforms can post to a web-service and merge the response back into the XML document, providing XSLT transforms along the way if required.<!--A full list of features is available here: <a>Rhinoforms Features</a>--></p>
+        
+        <h3>What does Rhinoforms markup look like?</h3>
+        <p>The forms code is based on plain old html forms. Here is an example:
+        <pre>&lt;form rhinoforms=&quot;true&quot;&gt;
+  &lt;input name=&quot;firstName&quot; type=&quot;text&quot; rf.validation=&quot;required&quot; /&gt;
+  &lt;input name=&quot;email&quot; type=&quot;text&quot; rf.validation=&quot;required email&quot; /&gt;
+  &lt;input type=&quot;submit&quot; action=&quot;next&quot; /&gt;
+&lt;/form&gt;</pre>
+	<span class="sidenote">You will probably want to add labels.</span>
+	</p>
+	
+	<p>You will also need a flow-definition, listing what forms are in the set. More on this here.</p>
+<!--
+	<pre>{
+  docBase: &quot;/myData&quot;,
+  formLists: {
+    main: [
+      { id: &quot;name&quot;, url: &quot;/forms/example/name.html&quot;, actions: [ &quot;next&quot; ] },
+      { id: &quot;address&quot;, url: &quot;/forms/example/address.html&quot;, actions: [ &quot;back&quot;, &quot;finish&quot; ] }
+    ]
+  }
+}</pre>
+-->
+<!--	
+        <p>Here is another example using the validation-function feature:
+        <pre>&lt;form rhinoforms=&quot;true&quot;&gt;
+	&lt;input name=&quot;blogger&quot; type=&quot;checkbox&quot; /&gt;
+	&lt;input name=&quot;website&quot; type=&quot;text&quot; rf.validationFunction=&quot;if(fields.blogger.value == true) { this.validate(&#39;required&#39;); }&quot; /&gt;
+	&lt;input type=&quot;submit&quot; action=&quot;next&quot; /&gt;
+&lt;/form&gt;</pre>
+	</p>
+-->
+        
+        <h3>How does Rhinoforms work?</h3>
+        <p>Once you have writen your forms ... </p>
+        
       </section>
     </div>
 
