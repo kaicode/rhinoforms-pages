@@ -1,80 +1,80 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Rhinoforms: Make Fast, Secure Forms with less code!" />
+	<head>
+		<meta charset='utf-8' />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<meta name="description" content="Rhinoforms: Make Fast, Secure Forms with less code!" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/rf-project.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/rf-project.css">
 
-    <title>Rhinoforms: Make Fast, Secure Forms with minimal code</title>
-  </head>
+		<title>Rhinoforms: Make Fast, Secure Forms with minimal code</title>
+	</head>
 
-  <body>
+	<body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/kaicode/rhinoforms">View on GitHub</a>
-          <h1 id="project_title">Rhinoforms</h1>
-        </header>
-    </div>
-    
-    <!-- SECTION TITLE -->
-    <div id="section_title_wrap" class="outer">
-      <section id="section_title" class="inner">
-        <h2>Documentation</h2>
-      </section>
-    </div>
-    
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-      	<h1>Rhinoforms: The Basics</h1>
-      	
-        <h3>Who is Rhinoforms for?</h3>
-        <p>Rhinoforms is for anyone with basic HTML and JavaScript skills who wants to capture user input.</p>
-        
-        <h3>What can Rhinoforms do?</h3>
-        <p>Rhinoforms captures form data as an XML document.</p>
-        <p>Form validation can be provided based on pre-defined keywords (required, email, pattern, etc) or short JavaScript functions referencing other fields.</p>
-        <p>Validation is run in the browser for a quick response time, and for bullet-proof security validation is run again on the server.</p>
-        <p>Rhinoforms can inject values from the XML document into any part of a form, not just the input fields.</p>
-        <p>Rhinoforms can post to a web-service and merge the response back into the XML document, providing XSLT transforms along the way if required.<!--A full list of features is available here: <a>Rhinoforms Features</a>--></p>
-        
-        <h3>What does Rhinoforms markup look like?</h3>
-        <p>The forms code is based on plain old html forms. Here is an example:
-        <pre>&lt;form rhinoforms=&quot;true&quot;&gt;
-  &lt;input name=&quot;firstName&quot; type=&quot;text&quot; rf.validation=&quot;required&quot; /&gt;
-  &lt;input name=&quot;email&quot; type=&quot;text&quot; rf.validation=&quot;required email&quot; /&gt;
-  &lt;input type=&quot;submit&quot; action=&quot;next&quot; /&gt;
-&lt;/form&gt;</pre>
-	<span class="sidenote">You will probably want to add labels.</span>
-	</p>
-	
-	<p>You will also need a form-flow definition file, writen in JavaScript, listing what forms are in the set, what actions they have and what part of the XML document each form is focused on. Fields are bound to a path and node-name in the XML document based on the focus path of the form and the field name.<!--More on this here: <a>Form-Flow</a>--></p>
-
-<!--	
-        <p>Here is another example using the validation-function feature:
-        <pre>&lt;form rhinoforms=&quot;true&quot;&gt;
-	&lt;input name=&quot;blogger&quot; type=&quot;checkbox&quot; /&gt;
-	&lt;input name=&quot;website&quot; type=&quot;text&quot; rf.validationFunction=&quot;if(fields.blogger.value == true) { this.validate(&#39;required&#39;); }&quot; /&gt;
+		<!-- HEADER -->
+		<div id="header_wrap" class="outer">
+				<header class="inner">
+					<a id="forkme_banner" href="https://github.com/kaicode/rhinoforms">View on GitHub</a>
+					<h1 id="project_title"><a href="/">Rhinoforms</a></h1>
+				</header>
+		</div>
+		
+		<!-- SECTION TITLE -->
+		<div id="section_title_wrap" class="outer">
+			<section id="section_title" class="inner">
+				<h2>Documentation</h2>
+			</section>
+		</div>
+		
+		<!-- MAIN CONTENT -->
+		<div id="main_content_wrap" class="outer">
+			<section id="main_content" class="inner">
+				<h1>Rhinoforms: The Basics</h1>
+				
+				<h3>Who is Rhinoforms for?</h3>
+				<p>Rhinoforms is for anyone with basic HTML and JavaScript skills who wants to capture user input.</p>
+				
+				<h3>What can Rhinoforms do?</h3>
+				<p>Rhinoforms captures form data as an XML document.</p>
+				<p>Form validation can be provided based on pre-defined keywords (required, email, pattern, etc) or short JavaScript functions referencing other fields.</p>
+				<p>Validation is run in the browser for a quick response time, and for bullet-proof security validation is run again on the server.</p>
+				<p>Rhinoforms can inject values from the XML document into any part of a form, not just the input fields.</p>
+				<p>Rhinoforms can post to a web-service and merge the response back into the XML document, providing XSLT transforms along the way if required.<!--A full list of features is available here: <a>Rhinoforms Features</a>--></p>
+				
+				<h3>What does Rhinoforms markup look like?</h3>
+				<p>The forms code is based on plain old html forms. Here is an example:
+				<pre>&lt;form rhinoforms=&quot;true&quot;&gt;
+	&lt;input name=&quot;firstName&quot; type=&quot;text&quot; rf.validation=&quot;required&quot; /&gt;
+	&lt;input name=&quot;email&quot; type=&quot;text&quot; rf.validation=&quot;required email&quot; /&gt;
 	&lt;input type=&quot;submit&quot; action=&quot;next&quot; /&gt;
 &lt;/form&gt;</pre>
-	</p>
--->
-        
-      </section>
-    </div>
+				<span class="sidenote">You will probably want to add labels.</span>
+				</p>
+	
+				<p>You will also need a form-flow definition file, writen in JavaScript, listing what forms are in the set, what actions they have and what part of the XML document each form is focused on. Fields are bound to a path and node-name in the XML document based on the focus path of the form and the field name.<!--More on this here: <a>Form-Flow</a>--></p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+			<!--	
+							<p>Here is another example using the validation-function feature:
+							<pre>&lt;form rhinoforms=&quot;true&quot;&gt;
+				&lt;input name=&quot;blogger&quot; type=&quot;checkbox&quot; /&gt;
+				&lt;input name=&quot;website&quot; type=&quot;text&quot; rf.validationFunction=&quot;if(fields.blogger.value == true) { this.validate(&#39;required&#39;); }&quot; /&gt;
+				&lt;input type=&quot;submit&quot; action=&quot;next&quot; /&gt;
+			&lt;/form&gt;</pre>
+				</p>
+			-->
+				
+			</section>
+		</div>
 
-  </body>
+		<!-- FOOTER	-->
+		<div id="footer_wrap" class="outer">
+			<footer class="inner">
+				<p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+			</footer>
+		</div>
+
+	</body>
 </html>
