@@ -1,0 +1,35 @@
+---
+layout: api
+title: Action | FormFlow Definition
+permalink: /api/FormFlow/Form/Action/index.html
+---
+				<div class="content">
+					<div class="overview content-block roundTop">
+						<h1>{{page.title}}</h1>
+						<p>There can be one or many Actions in the Form.actions array. The single Action of the Form in the FormFlow below is in bold:
+						<pre>{
+  docBase: &quot;/rootNode&quot;,
+  formLists: {
+    main: [
+      {
+      	id: &quot;name&quot;,
+      	url: &quot;/forms/example/name-form.html&quot;,
+      	actions: [ <strong>&quot;finish&quot;</strong> ]
+      }
+    ]
+  }
+}</pre>
+						</p>
+					
+						<p>A <a href="../">Form</a> can only use an Action defined in it's actions list.</p>
+						<p>Actions can be bound to buttons and other HTML elements for the user to trigger.</p>
+					
+						<p>There are three reserved action names: "next", "back" and "cancel".</p>
+						<p><span class="lingo">"next"</span> - validates the form, stopping for any errors, posts the field values to the server and loads the next form in the list.</p>
+						<p><span class="lingo">"back"</span> - posts the field values to the server without validating and loads the previous form in the list. The values of any fields that were valid will be persisted, any invalid or blank fields will be dropped.</p>
+						<p><span class="lingo">"cancel"</span> - loads the previous form in the list without validating or posting the field values.</p>
+					
+						<p>As well as stepping forward and backward through the form list you can also jump to a form by using it's id....</p>
+					
+					</div>
+				</div>

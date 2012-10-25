@@ -1,0 +1,32 @@
+---
+layout: api
+title: Form | FormFlow Definition
+permalink: /api/FormFlow/Form/index.html
+---
+				<div class="content">
+					<div class="overview content-block roundTop">
+						<h1>{{page.title}}</h1>
+						<p>There can be one or many Forms in each array in the <a href="../#formLists">FormFlow.formLists</a> map. The first Form in the main formList is in bold below:
+						<pre>{
+  docBase: &quot;/rootNode&quot;,
+  formLists: {
+    main: [
+      <strong>{
+      	id: &quot;name&quot;,
+      	url: &quot;/forms/example/name-form.html&quot;,
+      	actions: [ &quot;finish&quot; ]
+      }</strong>
+    ]
+  }
+}</pre>
+						</p>
+						<p>Here the Form object has just the three required properties; id, url and actions.</p>
+					
+						<h2>Required Form Properties</h2>
+					
+						<p><span class="lingo">id</span> - a name which identifies the form, must be is unique in the current list.</p>
+						<p><span class="lingo">url</span> - the path to the form file on disk, relative to the root of the webapp.</p>
+						<p><span class="lingo">actions</span> - an array of Actions this form can perform. There are a few simple action strings; "next", "back" and "cancel", but they can be more complex. More on actions here: <a href="Action/">FormFlow > Action</a>.</p>
+					
+					</div>
+				</div>
