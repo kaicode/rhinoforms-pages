@@ -1,21 +1,26 @@
 ---
 layout: api
-title: Form | FormFlow Definition
+title: FormFlow > Form
 permalink: /api/FormFlow/Form/index.html
 ---
 				<div class="content">
 					<div class="overview content-block roundTop">
 						<h1>{{page.title}}</h1>
-						<p>There can be one or many Forms in each array in the <a href="../#formLists">FormFlow.formLists</a> map. The first Form in the main formList is in bold below:
+						<p>Form declarations are contained in an array in the <a href="../#formLists">FormFlow.formLists</a> map. The first Form in the 'main' formList is in bold below:
 						<pre>{
   docBase: &quot;/rootNode&quot;,
   formLists: {
     main: [
       <strong>{
-      	id: &quot;name&quot;,
-      	url: &quot;/forms/example/name-form.html&quot;,
-      	actions: [ &quot;finish&quot; ]
-      }</strong>
+        id: &quot;name&quot;,
+        url: &quot;/forms/example/name-form.html&quot;,
+        actions: [ &quot;next&quot; ]
+      }</strong>,
+      {
+        id: "address",
+        url: "/forms/example/address-form.html",
+        actions: [ "back", "finish" ]
+      }
     ]
   }
 }</pre>

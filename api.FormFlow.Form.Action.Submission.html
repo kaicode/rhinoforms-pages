@@ -1,0 +1,61 @@
+---
+layout: api
+title: FormFlow > Form > Action > Submission
+permalink: /api/FormFlow/Form/Action/Submission/index.html
+---
+				<div class="content">
+					<div class="overview content-block roundTop">
+						<h1>{{page.title}}</h1>
+						
+						<a name="Overview"></a>
+						<h2>Overview</h2>
+						<p>An Action Submission is used to submit form data to an another webapp. The response can be merged back into the DataDocument.</p>
+						<p>The posting happens on the server so is completely secure.</p>
+						<p>Example:</p>
+						<pre>{
+  docBase: &quot;/rootNode&quot;,
+  formLists: {
+    main: [
+      {
+        id: &quot;name&quot;,
+        url: &quot;/forms/example/name-form.html&quot;,
+        actions: [ &quot;next&quot; ]
+      },
+      {
+        id: &quot;address&quot;,
+        url: &quot;/forms/example/address-form.html&quot;,
+        actions: [
+          &quot;back&quot;
+          {
+            name: &quot;saveAddress&quot;,
+            <strong>submission: {
+              preTransform: "xslt/address-webservice-request.xsl", 
+              url: &quot;http://localhost/address-webservice/save&quot;,
+              data: {
+                formXml: &quot;[dataDocument]&quot;
+              }
+              method: &quot;post&quot;,
+              postTransform: "xslt/address-webservice-response.xsl",
+              resultInsertPoint: &quot;/rootNode/saveAddressResult&quot;
+            }</strong>
+          }
+        ]
+      },
+      {
+        id: &quot;saveResult&quot;,
+        docBase: &quot;saveAddressResult&quot;,
+        url: &quot;/forms/example/saveResult.html&quot;
+      }
+    ]
+  }
+}</pre>
+						<p><span class="lingo">url</span> - the URL of the target endpoint. Required.</p>
+						<p><span class="lingo">data</span> - a string/string map of parameters to be included in the post. A value of "[dataDocument]" will be replaced by a copy of the XML from the DataDocument. Optional.</p>
+						<p><span class="lingo">method</span> - the http method to use. Currently only "get" and "post" are supported. Defaults to "post". Optional.</p>
+						<p><span class="lingo">preTransform</span> - the path of an xsl file which will be used to transform a copy of the DataDocument before posting. The file path should be relative to the location of the form flow. Optional.</p>
+						<p><span class="lingo">postTransform</span> - the path of an xsl file which will be used to transform the body of the http response before adding to the DataDocument. The result should be valid XML. This should only be used with resultInsertPoint. Optional.</p>
+						<p><span class="lingo">resultInsertPoint</span> - the XPath of node on the DataDocument which will be created and have the http response body appended to it. Optional.</p>
+					</div>
+				</div>
+				
+				

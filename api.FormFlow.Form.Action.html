@@ -1,35 +1,208 @@
 ---
 layout: api
-title: Action | FormFlow Definition
+title: FormFlow > Form > Action
 permalink: /api/FormFlow/Form/Action/index.html
 ---
 				<div class="content">
 					<div class="overview content-block roundTop">
 						<h1>{{page.title}}</h1>
-						<p>There can be one or many Actions in the Form.actions array. The single Action of the Form in the FormFlow below is in bold:
+						
+						<ul>
+							<li><a href="#Overview">Overview</a></li>
+							<li><a href="#Action_Types">Action Types</a></li>
+							<li><a href="#Jumping_Actions">Jumping Actions</a>
+								<ul>
+									<li><a href="#Jumping_Within_the_Current_Form_List">Jumping Within the Current Form List</a></li>
+									<li><a href="#Jumping_Across_Form_Lists">Jumping Across Form Lists</a>
+										<ul>
+											<li><a href="#Form_Stack">Form Stack</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#Delete_Action">Delete Action</a></li>
+							<li><a href="#Longhand_Declaration">Longhand Declaration</a></li>
+						</ul>
+						
+						<a name="Overview"></a>
+						<h2>Overview</h2>
+						<p>There can be one or many Actions in the Form.actions array.
 						<pre>{
   docBase: &quot;/rootNode&quot;,
   formLists: {
     main: [
       {
-      	id: &quot;name&quot;,
-      	url: &quot;/forms/example/name-form.html&quot;,
-      	actions: [ <strong>&quot;finish&quot;</strong> ]
+        id: &quot;name&quot;,
+        url: &quot;/forms/example/name-form.html&quot;,
+        actions: [ <strong>&quot;next&quot;</strong> ]
+      },
+      {
+        id: &quot;address&quot;,
+        url: &quot;/forms/example/address-form.html&quot;,
+        actions: [ <strong>&quot;back&quot;, &quot;finish&quot;</strong> ]
       }
     ]
   }
 }</pre>
 						</p>
 					
-						<p>A <a href="../">Form</a> can only use an Action defined in it's actions list.</p>
-						<p>Actions can be bound to buttons and other HTML elements for the user to trigger.</p>
-					
-						<p>There are three reserved action names: "next", "back" and "cancel".</p>
+						<p>Actions are used to navigate the flow and to trigger submissions. Action names should be unique within each array.</p>
+						
+						<a name="Action_Types"></a>
+						<h2>Action Types</h2>
+						
+						<p>There are four action types for stepping through a form list: "next", "back", "cancel" and "finish".</p>
+						
 						<p><span class="lingo">"next"</span> - validates the form, stopping for any errors, posts the field values to the server and loads the next form in the list.</p>
 						<p><span class="lingo">"back"</span> - posts the field values to the server without validating and loads the previous form in the list. The values of any fields that were valid will be persisted, any invalid or blank fields will be dropped.</p>
 						<p><span class="lingo">"cancel"</span> - loads the previous form in the list without validating or posting the field values.</p>
-					
-						<p>As well as stepping forward and backward through the form list you can also jump to a form by using it's id....</p>
-					
+						<p><span class="lingo">"finish"</span> - displays the collected DataDocument. This action is just for convenience during development. To make use of the collected user data you should use a <a href="Submission/">Submission</a>.</p>
+
+						<a name="Jumping_Actions"></a>
+						<h2>Jumping Actions</h2>
+						
+						<a name="Jumping_Within_the_Current_Form_List"></a>
+						<h3>Jumping Within the Current Form List</h3>
+						
+						<p>An action can jump to a specific form in the current form list using this format:</p>
+						<pre>actionName:targetFormId</pre>
+						
+						<p>Example:</p>
+						<pre>{
+  docBase: &quot;/rootNode&quot;,
+  formLists: {
+    main: [
+      {
+        id: &quot;name&quot;,
+        url: &quot;/forms/example/name-form.html&quot;,
+        actions: [ &quot;next&quot;, <strong>&quot;jumpToLikes:likes&quot;</strong> ]
+      },
+      {
+        id: &quot;address&quot;,
+        url: &quot;/forms/example/address-form.html&quot;,
+        actions: [ &quot;back&quot;, &quot;next&quot; ]
+      },
+      {
+        id: &quot;likes&quot;,
+        url: &quot;/forms/example/likes-form.html&quot;,
+        actions: [ &quot;back&quot;, &quot;next&quot; ]
+      },
+      {
+        id: &quot;dislikes&quot;,
+        url: &quot;/forms/example/dislikes-form.html&quot;,
+        actions: [ &quot;back&quot;, &quot;next&quot;, <strong>&quot;jumpToName:name&quot;</strong> ]
+      },
+      {
+        id: &quot;summary&quot;,
+        url: &quot;/forms/example/summary-form.html&quot;,
+        actions: [ <strong>&quot;jumpToName:name&quot;</strong>, <strong>&quot;jumpToAddress:address&quot;</strong>, <strong>&quot;jumpToLikes:likes&quot;</strong>, <strong>&quot;jumpToDislikes:dislikes&quot;</strong>, &quot;finish&quot; ]
+      }
+    ]
+  }
+}</pre>
+
+						<p>The names of the jumping actions above start with 'jumpTo' but any name is fine.</p>
+						<p>As default jumping actions are of the type "next", this can be overriden using a <a href="#Longhand_Declaration">longhand declaration</a>.</p>
+						
+						<a name="Jumping_Across_Form_Lists"></a>
+						<h3>Jumping Across Form Lists</h3>
+						
+						<p>Jump to a specific form in another list using this format:</p>
+						<pre>actionName:targetListName:targetFormId</pre>
+
+						<p>Example:</p>
+						<pre>{
+  docBase: &quot;/rootNode&quot;,
+  formLists: {
+    main: [
+      {
+        id: &quot;name&quot;,
+        url: &quot;/forms/example/name-form.html&quot;,
+        actions: [ &quot;next&quot;]
+      },
+      {
+        id: &quot;address&quot;,
+        url: &quot;/forms/example/address-form.html&quot;,
+        actions: [ &quot;back&quot;, &quot;next&quot; ]
+      },
+      {
+        id: &quot;likesDislikesSummary&quot;,
+        url: &quot;/forms/example/likes-dislikes-summary.html&quot;,
+        actions: [ &quot;back&quot;, <strong>&quot;jumpToLikes:likesForms.likes&quot;</strong>, <strong>&quot;jumpToDislikes:dislikesForms.dislikes&quot;</strong>, &quot;next&quot; ]
+      },
+      {
+        id: &quot;summary&quot;,
+        url: &quot;/forms/example/summary-form.html&quot;,
+        actions: [ &quot;jumpToName:name&quot;, &quot;jumpToAddress:address&quot;, <strong>&quot;jumpToLikes:likesForms.likes&quot;</strong>, <strong>&quot;jumpToDislikes:dislikesForms.dislikes&quot;</strong>, &quot;finish&quot; ]
+      }
+    ],
+    <strong>likesForms</strong>: [
+      {
+        id: <strong>&quot;likes&quot;</strong>,
+        url: &quot;/forms/example/likes-form.html&quot;,
+        actions: [ &quot;cancel&quot;, &quot;next&quot; ]
+      }
+    ],
+    <strong>dislikesForms</strong>: [
+      {
+        id: <strong>&quot;dislikes&quot;</strong>,
+        url: &quot;/forms/example/dislikes-form.html&quot;,
+        docBase: &quot;dislikes&quot;,
+        actions: [ &quot;cancel&quot;, &quot;next&quot; ]
+      }
+    ]
+  }
+}</pre>
+
+						<p>Notice that the 'likes' and 'dislikes' forms navigate back to the 'likesDislikesSummary' using just a simple "next" or "cancel" stepping action. See the Form Stack section below for explanation.
+
+						<a name="Form_Stack"></a>
+						<h4>Form Stack</h4>
+						
+						<p>Rhinoforms maintains a stack of which form lists you have jumpped through.</p>
+						
+						<p>The Form Stack allows for simpler form actions. The Stepping Action "next" should be used in the last form of a list to drop the user back into the current form in the previous form list. Similarly the "back" action should be used in the first form of a list.</p>
+						
+						<a name="Action_Parameters"></a>
+						<h2>Action Parameters</h2>
+						
+						<p>Parameters can be given to actions using the format:</p>
+						<pre>actionName:actionTarget(paramName:paramValue, paramName:paramValue)</pre>
+						<p>Action parameters can be used to build the target docBase or in a delete action.</p>
+						
+						<a name="Delete_Action"></a>
+						<h2>Delete Action</h2>
+
+						<p>The delete action uses an XPath Expression to delete part of the DataDocument and then reload the current form using the format:</p>
+						<pre>actionName:delete(xpath:XPathExpression)</pre>
+						<p>Example:</p>
+						<pre>deleteDislikes:delete(xpath:/rootNode/dislikes)</pre>
+						
+						<a name="Longhand_Declaration"></a>
+						<h2>Longhand Declaration</h2>
+						
+						<p>Actions can be expressed in a long-handed way using this format:</p>
+						<pre>{
+  name: "actionName",
+  type: "actionType",
+  target: "actionTarget",
+  submission: { submissionSettings },
+  clearTargetFormDocBase: "bool"
+}</pre>
+						<p>Only the name property is required.</p>
+						
+						<p><span class="lingo">name</span> - name of the action. Should be unique within this action array. Required.</p>
+						<p><span class="lingo">type</span> - the <a href="#Action_Types">action type</a>. Optional.</p>
+						<p><span class="lingo">target</span> - the <a href="#Jumping_Actions">jump target</a>, i.e. targetFormId or targetListName:targetFormId. Optional.</p>
+						<p><span class="lingo">submission</span> - the <a href="Submission/">submission</a> to be performed during this action. Optional.</p>
+						<p><span class="lingo">clearTargetFormDocBase</span> - whether or not to delete all nodes under the target form's docBase. Possible values are "true" or "false". Defaults to "false". Optional.</p>
+						
+						<p>The longhand declaration allows you to mix stepping and jumping behaviour. For example an action of type "cancel" (discard current input) but which also jumps to a specific form (default cancel behaviour is to step to previous form). Example:</p>
+						<pre>{
+  name: "cancelAndJumpToName",
+  type: "cancel",
+  target: "name"
+}</pre>
+
 					</div>
 				</div>
