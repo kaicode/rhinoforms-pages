@@ -3,9 +3,44 @@ layout: api
 title: Value Injection
 permalink: /api/Form/Value_Injection/index.html
 ---
-				<div class="content">
-					<div class="overview content-block roundTop">
-						<h1>{{page.title}}</h1>
-						todo: rf.valuation between example
-					</div>
-				</div>
+<div class="content">
+	<div class="overview content-block roundTop">
+		<h1>{{page.title}}</h1>
+		
+		<p>Values from the DataDocument can be injected anywhere into a form page using an XPath Expression in double curly brackets.</p>
+		
+		<h2>Example</h2>
+		<p>A DataDocument containing:
+			<pre>&lt;myData&gt;
+  &lt;firstName&gt;Kai&lt;/firstName&gt;
+  &lt;surname&gt;Kewley&lt;/surname&gt;
+  &lt;homeCountry&gt;England&lt;/homeCountry&gt;
+&lt;/myData&gt;</pre>
+
+			.. and form page source:
+			<pre>&lt;h1&gt;Hi <strong>{{ "{{/myData/firstName" }}}}</strong>&lt;/h1&gt;
+
+&lt;form rhinoform=&quot;true&quot;&gt;
+
+  &lt;label for=&quot;input_favouriteThings&quot; &gt;What are your favourite things about <strong>{{ "{{/myData/homeCountry" }}}}</strong>?&lt;/label&gt;
+  &lt;input id=&quot;input_favouriteThings&quot; name=&quot;favouriteThings&quot; type=&quot;text&quot; /&gt;
+
+  &lt;input type=&quot;submit&quot; rf.action=&quot;next&quot; value=&quot;Next&quot; /&gt;
+
+&lt;/form&gt;</pre>
+
+			.. will give a page like:
+			<pre>
+<h1>Hi Kai</h1>
+<form rhinoform="true" action="javascript: void(0)"><label for="input_favouriteThings" >What are your favourite things about England?</label>
+<input id="input_favouriteThings" name="favouriteThings" type="text" />
+
+<input type="submit" rf.action="next" value="Next" />
+</form></pre>
+			<hr/>
+			
+			
+		
+		todo: rf.valuation between example
+	</div>
+</div>

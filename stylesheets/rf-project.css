@@ -161,3 +161,16 @@ pre {
 	font-style: italic;
 	color: grey;
 }
+.content pre h1 {
+	border: none;
+	font-size: 20px;
+}
+.content pre form {
+	background: inherit;
+	padding: 0;
+	margin: 0;
+}
+.content pre input, .content pre label {
+	padding: 0;
+	margin: 0;
+}
