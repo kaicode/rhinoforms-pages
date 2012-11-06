@@ -1,0 +1,88 @@
+Introduction
+	What is Rhinoforms?
+		Rhinoforms: Make Fast, Secure Forms with less code!
+		
+		Rhinoforms is a secure, lightweight HTML Forms Platform that enables the capture of structured data sets against strict validation using forms with minimal markup.
+		Rhinoforms is designed to support rapid Forms development using HTML and JavaScript without the need for server-side coding.
+		
+		Data Captured as XML, Non-linear Form-Flows, Validation Run in the Browser and on the Server, Custom JavaScript Validation Functions, Integrate with other Web Applications
+	
+	
+	
+	Who is it for?
+	How does it work?
+	Is Rhinoforms the same as XForms?
+	Non-intrusive
+	Browser support
+	Mobile
+
+Getting started
+	Quick Start Guide
+	Concepts
+Data-Document
+Form-Flow Definition
+	DocBase
+	defaultInitalData
+	Form Lists
+		Navigation Stack
+	Forms
+		DocBase
+		Actions
+			name
+			type
+			target - delete special case
+			default-actions
+				next - validates
+				back - valid is kept, invalid is dropped
+				cancel - drops all fields
+				delete
+
+			Submissions
+				preTransform
+					params
+				url
+					{contextPath}
+				method
+				data
+				postTransform
+				resultInsertPoint
+				clearTargetFormDocBase
+	
+Forms
+	Fields
+		DataDocument binding
+		Validation
+			Keywords
+				required
+				pattern
+				between
+				Writing your own
+			Custom Functions
+				fields
+					name
+					value
+					included
+					a.a > a_a
+			Validate On
+		Input Mask
+		Conditional Include
+		Custom Types
+			auto-complete-select
+		Proxy
+		Select
+			rf.source
+			rf.preselectFirstOption
+			rf.range
+		Calculated
+	Actions
+		type
+			Tips- First Submit. Next button should be of type 'submit', other buttons of type 'button'. That way pressing enter will always submit the form.
+	Includes
+	Value Output
+		for each
+			/,//,relative
+	Event hooks
+		rf.onFormLoad(function(formId))
+		rf.onEveryFormLoad(function(formId))
+DebugBar
+
