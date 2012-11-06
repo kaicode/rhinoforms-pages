@@ -1,0 +1,38 @@
+---
+layout: api
+title: Validation Function
+permalink: /api/Form/Input_Field/Validation_Function/index.html
+---
+				<div class="content">
+					<div class="overview content-block roundTop">
+						<h1>{{page.title}}</h1>
+						<p>A Validation Function is a short JavaScript function which provides additional logic on top of Validation Keywords. The presence and value of other fields in the current form can be used to decide what, if any, Validation Keywords should apply.</p>
+						
+						<p>Validation Functions provide validation for a single field and are declared using <strong>rf.validationFunction</strong>.</p>
+						
+						<p>In this example text in the 'languages' field is only required if 'multilingual' is checked.
+							<pre>
+Can you speak more than one language?
+  &lt;input name=&quot;multilingual&quot; type=&quot;checkbox&quot; /&gt;
+
+What languages can you speak?
+  &lt;input name=&quot;languages&quot; type=&quot;text&quot;
+    <strong>rf.validationFunction=&quot;if (fields.multilingual.value == &#39;yes&#39;) { this.validate(&#39;required&#39;); }&quot;</strong> /&gt;
+							</pre>
+							<span class="sidenote">Label tags omitted for code readability.</span>
+						</p>
+						
+						<hr/>
+						<p>The JavaScript function can make use of the <span class="lingo">fields</span> object. The fields object contains an entry for every field in the current form mapped by field name. Each field entry has the following properties:
+							<ul>
+								<li>name - (string) the name of the field with any full-stop characters replaced with an underscore.</li>
+								<li>value - (string) the current value of the field.</li>
+								<li>included - (boolean) the result of any rf.includeIf statements. Defaults to true.</li>
+							</ul>
+						</p>
+			
+						<hr/>
+						<p>As with Validation Keywords, Validation Functions are run in the browser and again on the server for bullet-proof input validation.</p>
+						
+					</div>
+				</div>

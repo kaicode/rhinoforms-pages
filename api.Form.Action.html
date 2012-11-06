@@ -1,0 +1,23 @@
+---
+layout: api
+title: Form Action
+permalink: /api/Form/Action/index.html
+---
+				<div class="content">
+					<div class="overview content-block roundTop">
+						<h1>{{page.title}}</h1>
+						<p>In Rhinoforms all Form navigation is done using Actions. The actions available to a form and their behaviour is defined in the <a href="/api/FormFlow/Form/Action/">Form Flow</a>.</p>
+						<p>An action can be bound to a button or other element using the <strong>rf.action</strong> attribute, it can then be triggered by clicking that element.</p>
+						<p>An example using a submit button:
+							<pre>&lt;input type=&quot;submit&quot; <strong>rf.action=&quot;next&quot;</strong> value=&quot;Next&quot; /&gt;</pre>
+						</p>
+						<p>An example using an A link:
+							<pre>&lt;a href=&quot;#&quot; rf.action=&quot;next&quot;&gt;Next&lt;/a&gt;</pre>
+						</p>
+						
+						<h2>The benefits of a Submit Button</h2>
+						<p>To get the best user experience in your forms it's a good idea to use a submit button rather than an A link or anything else. This is because most browsers will let you submit a HTML form using the enter key.</p>
+						<p>If a form has more than one action available make the most natural action an input of type 'submit' and make any others of type 'button'. Most browsers will trigger the first 'submit' button on the page when the user hits enter.</p>
+						
+					</div>
+				</div>
