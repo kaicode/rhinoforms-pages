@@ -14,14 +14,15 @@ permalink: /api/Form/index.html
   &lt;input name=&quot;email&quot; type=&quot;text&quot; rf.validation=&quot;required email&quot; /&gt;
   &lt;input type=&quot;submit&quot; action=&quot;next&quot; /&gt;
 &lt;/form&gt;</pre>
-						<p>A Rhinoforms Form must be marked with the attribute <strong>rhinoforms='true'</strong>, this tells the parser to process the form.</p>
+						<p>A Rhinoforms &lt;form&gt; must be marked with the attribute <strong>rhinoforms='true'</strong>, this tells the parser to process the form.</p>
 						
-						<p>There should be no <strong>action</strong> or <strong>method</strong> attributes on the &lt;form&gt; tag. This is because all forms are posted to the Rhinoforms Servlet for server-side validation. The action url does not make it's way into the browser, this way no one can bypass the forms. The collected data can make it's way to a web endpoint using a <a href="/api/FormFlow/Form/Action/Submission/">submission</a>, or the Rhinoforms Servlet may just respond with the next form. All that logic is tucked away in the <a href="/api/FormFlow">FormFlow</a>.</p>
+						<p>There should be no <strong>action</strong> or <strong>method</strong> attributes on the &lt;form&gt; tag. This is because all forms are posted to the Rhinoforms Servlet for server-side validation. The action url does not make it's way into the browser, this way no one can bypass the forms. The collected data may be posted to a web endpoint using a <a href="/api/FormFlow/Form/Action/Submission/">submission</a>, or the Rhinoforms Servlet may just respond with the next form. All that logic is tucked away in the <a href="/api/FormFlow">FormFlow</a>.</p>
 						
 						<p>The &lt;input&gt; fields have some custom attributes on them:</p>
 						<pre>&lt;input name=&quot;firstName&quot; type=&quot;text&quot; <strong>rf.validation=&quot;required&quot;</strong> /&gt;
 &lt;input name=&quot;email&quot; type=&quot;text&quot; <strong>rf.validation=&quot;required email&quot;</strong> /&gt;
-&lt;input type=&quot;submit&quot; <strong>action=&quot;next&quot;</strong> /&gt;</pre>
+&lt;input type=&quot;submit&quot; rf.action=&quot;next&quot; /&gt;</pre>
+						<p>More about this here: <a href="Field/">Field</a></p>
 						
 					</div>
 				</div>

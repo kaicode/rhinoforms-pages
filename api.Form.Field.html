@@ -1,0 +1,53 @@
+---
+layout: api
+title: Input Field
+permalink: /api/Form/Input_Field/index.html
+---
+				<div class="content">
+					<div class="overview content-block roundTop">
+						<h1>{{page.title}}</h1>
+						<p>Rhinoforms Form Fields are plain HTML &lt;input&gt; fields:</p>
+						<pre>&lt;input name=&quot;firstName&quot; type=&quot;text&quot; /&gt;</pre>
+						
+						<h2>Validation</h2>
+						<p>Field validation rules are defined in the HTML against the input field. There are two ways to define rules;
+							<ul>
+								<li><a href="Validation_Keyword/">Validation Keywords</a> - cover the basics - required, email etc.</li>
+								<li>Validation Functions - more complex, can reference other fields.</li>
+							</ul>
+						</p>
+						<h3>When Validation Happens</h3>
+						<p>
+							By default validation happens when the form is submitted but this behaviour can be changed using the rf.validateOn attribute:
+							<pre>&lt;input name=&quot;age&quot; type=&quot;text&quot; rf.validation=&quot;required&quot;
+  <strong>rf.validateOn=&quot;inputBlur&quot;</strong> /&gt;</pre>
+							At the moment "inputBlur" is the only available value. This will cause the field to be validated when it looses keyboard focus (usually when the next field is selected).
+						</p>
+
+
+						<h2>DataDocument Location</h2>
+						<p>Fields are bound to a node in the <a href="/docs/Rhinoforms_Getting_Started.html#DataDocument">DataDocument</a> implicitly. The path to a field's DataDocument node is resolved using the current docBase and the input field name.</p>
+						
+						<p>For example, a form with a docBase of "/myData/address" with the following fields:</p>
+						<pre>&lt;input name=&quot;line1&quot; type=&quot;text&quot; /&gt;
+&lt;input name=&quot;line2&quot; type=&quot;text&quot; /&gt;</pre>
+						<p>Will produce the following nodes:</p>
+						<pre>&lt;myData&gt;
+  &lt;address&gt;
+    &lt;line1&gt;10 Downing Street&lt;/line1&gt;
+    &lt;line2&gt;London&lt;/line2&gt;
+  &lt;/address&gt;
+&lt;/myData&gt;</pre>
+
+						<hr/>
+
+						<p>Nodes deeper than the current docBase can also be produced by using dot notation in the input field name. A form with a docBase of "/profile" and a field:</p>
+						<pre>&lt;input name=&quot;about.interests&quot; type=&quot;text&quot; /&gt;</pre>
+						<p>Will produce nodes like:</p>
+						<pre>&lt;profile&gt;
+  &lt;about&gt;
+    &lt;interests&gt;Some text&lt;/interests&gt;
+  &lt;/about&gt;
+&lt;/profile&gt;</pre>
+					</div>
+				</div>

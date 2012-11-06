@@ -154,6 +154,9 @@ pre {
 	padding: 5px 0;
 	padding-bottom: 0;
 }
+.content h3 {
+	font-size: 20px;
+}
 .lingo {
 	font-style: italic;
 	color: grey;

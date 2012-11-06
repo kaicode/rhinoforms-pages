@@ -1,0 +1,50 @@
+---
+layout: api
+title: Validation Keyword
+permalink: /api/Form/Input_Field/Validation_Keyword/index.html
+---
+				<div class="content">
+					<div class="overview content-block roundTop">
+						<h1>{{page.title}}</h1>
+						<p>Validation Keywords provide validation for a single field and are declared using <strong>rf.validation</strong>.
+							<pre>&lt;input name=&quot;firstName&quot; type=&quot;text&quot; <strong>rf.validation</strong>=&quot;required&quot; /&gt;</pre>
+						</p>
+						
+						<p>Multiple keywords can be used separated by a space:
+							<pre>&lt;input name=&quot;email&quot; type=&quot;text&quot; rf.validation=&quot;<strong>required email</strong>&quot; /&gt;</pre>
+						</p>
+
+						<p>Some keywords take parameters which are given as a name/value map inside round brackets:
+							<pre>&lt;input name=&quot;year&quot; type=&quot;text&quot; rf.validation=&quot;<strong>date({ format: 'YYYY' })</strong>&quot; /&gt;</pre>
+						</p>
+  						
+  						<h2>Predefined Validation Keywords</h2>
+  						
+						<p><span class="lingo">required</span> - some input must be given.</p>
+						
+						<hr/>
+						<p><span class="lingo">email</span> - input must match an email format.</p>
+						
+						<hr/>
+						<p><span class="lingo">date</span> - input must match given format and must be a valid date on the Gregorian calendar. Specify the date format using a settings map with 'format' key, see example. Defaults to "DD/MM/YYYY". Uses the Moment.js library, see <a href="http://momentjs.com/docs/#/parsing/string-format/" target="_blank">full list of parsing formats</a>.
+						<pre>&lt;input name=&quot;m&quot; type=&quot;text&quot; rf.validation=&quot;<strong>date({ format: 'MM/YY' })</strong>&quot; /&gt;</pre>
+						</p>
+						
+						<hr/>
+						<p><span class="lingo">between</span> - input must be between two numbers. Should be used with an <a href="../Input_Mask/">input mask</a> to restrict input characters to numbers. The two numbers can be taken from the DataDocument using <a href="../../Value_Injection/">Value Injection</a>
+						<pre>&lt;input name=&quot;pickANumber&quot; type=&quot;text&quot; 
+  rf.validation=&quot;<strong>between({ decimalA: '1', decimalB: '100' })</strong>&quot; /&gt;</pre>
+						</p>
+						
+						<hr/>
+						<p><span class="lingo">pattern</span> - input must match a given Regular Expression.<br/>Parameters: regex (required), errorMessage (optional, overrides the default error message).
+							<pre>&lt;input name=&quot;price&quot; type=&quot;text&quot;
+  rf.validation=&quot;<strong>pattern({ regex: '^[0-9]+\\.[0-9]{2}$', errorMessage: 'Please include two decimal places.' })</strong>&quot; /&gt;</pre>
+  							This example has a regular expression which requires one or more numbers followed by a decimal point and then exactly two numbers.
+						</p>
+						
+						<hr/>
+						<p>To add your own validation keywords see <a>Extending Rhinoforms</a>.</p>
+						
+					</div>
+				</div>
