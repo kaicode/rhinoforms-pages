@@ -1,0 +1,69 @@
+---
+layout: api
+title: Value Injection
+permalink: /api/Form/Value_Injection/index.html
+---
+<div class="content">
+	<div class="overview content-block roundTop">
+		<h1>{{page.title}}</h1>
+		
+		<p>Values from the DataDocument can be injected anywhere into a form page using an XPath Expression in double curly brackets.</p>
+		
+		<p>An absolute XPath (starting with '/') a searching XPath (starting with '//') or a relative XPath (not starting with '/') can be used. A relative XPath will automaticaly be prepended with the current docBase path.</p>
+		
+		<h2>Example: Title and Label Injection</h2>
+		<p>Values from the DataDocument can be injected into titles or labels. Here an absolute XPath is used.</p>
+		<p>A DataDocument containing:
+			<pre>&lt;myData&gt;
+  &lt;firstName&gt;Kai&lt;/firstName&gt;
+  &lt;surname&gt;Kewley&lt;/surname&gt;
+  &lt;homeCountry&gt;England&lt;/homeCountry&gt;
+&lt;/myData&gt;</pre>
+
+		.. and form page source:
+		<pre>&lt;h1&gt;Hi <strong>{{ "{{/myData/firstName" }}}}</strong>&lt;/h1&gt;
+
+&lt;form rhinoform=&quot;true&quot;&gt;
+
+  &lt;label for=&quot;input_favouriteThings&quot; &gt;What are your favourite things about <strong>{{ "{{/myData/homeCountry" }}}}</strong>?&lt;/label&gt;
+  &lt;input id=&quot;input_favouriteThings&quot; name=&quot;favouriteThings&quot; type=&quot;text&quot; /&gt;
+
+  &lt;input type=&quot;submit&quot; rf.action=&quot;next&quot; value=&quot;Next&quot; /&gt;
+
+&lt;/form&gt;</pre>
+
+		.. will give a page like:
+		<pre>
+<h1>Hi Kai</h1>
+<form rhinoform="true" action="javascript: void(0)"><label for="input_favouriteThings" >What are your favourite things about England?</label>
+<input id="input_favouriteThings" name="favouriteThings" type="text" />
+
+<input type="submit" rf.action="next" value="Next" />
+</form></pre>
+		<hr/>
+		
+		<a name="Validation_Parameter_Injection"></a>
+		<h2>Example: Validation Parameter Injection</h2>
+		<p>Values from the DataDocument can be injected into validation expressions. Here a searching XPath is used to match the node name from anywhere in the DataDocument.</p>
+		<p>A DataDocument containing:
+		<pre>&lt;myData&gt;
+  &lt;retrievedStockData&gt;
+    &lt;minimumOrder&gt;5&lt;/minimumOrder&gt;
+    &lt;maximumOrder&gt;100&lt;/maximumOrder&gt;
+  &lt;/retrievedStockData&gt;
+&lt;/myData&gt;</pre>
+
+		.. and form page source:
+		<pre>
+&lt;form rhinoform=&quot;true&quot;&gt;
+
+  How many items would you like to order?
+  &lt;input name=&quot;orderSize&quot; type=&quot;text&quot;
+    rf.validation=&quot;between({ decimalA: '<strong>{{ "{{//minimumOrder" }}}}'</strong>, decimalB: '<strong>{{ "{{//maximumOrder" }}}}</strong>' })&quot;  /&gt;
+
+  &lt;input type=&quot;submit&quot; rf.action=&quot;next&quot; value=&quot;Next&quot; /&gt;
+
+&lt;/form&gt;</pre>
+
+	</div>
+</div>

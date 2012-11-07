@@ -1,0 +1,17 @@
+---
+layout: api
+title: Include
+permalink: /api/Include/index.html
+---
+<div class="content">
+  <div class="overview content-block roundTop">
+    <h1>{{page.title}}</h1>
+    <p>A form page can use an include to inject commonly used HTML from another file.</p>
+    <p>An include statement is declared using the <strong>rf.include</strong> tag. The tag should have a <strong>src</strong> attribute with the relative path to the include file.</p>
+    <pre>&lt;form rhinoforms=&quot;true&quot;&gt;
+  &lt;input name=&quot;name&quot; type=&quot;text&quot; /&gt;
+  <strong>&lt;rf.include src=&quot;address-block.html&quot; /&gt;</strong>
+  &lt;input type=&quot;submit&quot; rf.action=&quot;next&quot; value=&quot;Next&quot; /&gt;
+&lt;/form&gt;</pre>
+  </div>
+</div>
