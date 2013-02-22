@@ -19,7 +19,10 @@
 		<div id="header_wrap" class="outer">
 				<header class="inner">
 					<a id="forkme_banner" href="https://github.com/kaicode/rhinoforms">View on GitHub</a>
-					<h1 id="project_title"><a href="/">Rhinoforms</a></h1>
+					<a href="/">
+						<h1 id="project_title">Rhinoforms</h1>
+						<img src="/images/rhinoforms.png">
+					</a>
 				</header>
 		</div>
 		
@@ -41,7 +44,8 @@
 				<h3>What can Rhinoforms do?</h3>
 				<p>Rhinoforms captures form data as an XML document.</p>
 				<p>Form validation can be provided based on pre-defined keywords (required, email, pattern, etc) or short JavaScript functions referencing other fields.</p>
-				<p>Validation is run in the browser for a quick response time, and for bullet-proof security validation is run again on the server.</p>
+				<p>Validation is run in the browser for a quick response time and, for bullet-proof security, validation is run again on the server.</p>
+				<p>The same JavaScript validation code is used in browser and on the server so there is less code to write and maintain and no need for any server-side programming.</p>
 				<p>Rhinoforms can inject values from the XML document into any part of a form, not just the input fields.</p>
 				<p>Rhinoforms can post to a web-service and merge the response back into the XML document, providing XSLT transforms along the way if required.<!--A full list of features is available here: <a>Rhinoforms Features</a>--></p>
 				
@@ -52,10 +56,12 @@
 	&lt;input name=&quot;email&quot; type=&quot;text&quot; rf.validation=&quot;required email&quot; /&gt;
 	&lt;input type=&quot;submit&quot; action=&quot;next&quot; /&gt;
 &lt;/form&gt;</pre>
-				<span class="sidenote">You will probably want to add labels.</span>
+				<span class="sidenote">Labels omitted for readability.</span>
 				</p>
 	
-				<p>You will also need a form-flow definition file, writen in JavaScript, listing what forms are in the set, what actions they have and what part of the XML document each form is focused on. Fields are bound to a path and node-name in the XML document based on the focus path of the form and the field name.<!--More on this here: <a>Form-Flow</a>--></p>
+				<p>You will also need a form-flow definition file, writen in JavaScript, listing what forms are in the set, what actions they have and what part of the XML document each form is focused on. Fields are bound to a path and node-name in the XML document based on the focus path of the form and the field name.</p>
+				
+				<p><a href="/api/">More about writing Rhinoforms here</a></p>
 
 			<!--	
 							<p>Here is another example using the validation-function feature:

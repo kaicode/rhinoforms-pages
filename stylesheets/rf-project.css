@@ -41,7 +41,7 @@ h4 {
 #header_wrap img {
 	width: 65px;
 	position: absolute;
-	margin-left: 11px;
+	padding-left: 11px;
 }
 
 #section_title h2 {
