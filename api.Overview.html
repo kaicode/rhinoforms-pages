@@ -6,26 +6,27 @@ permalink: /api/index.html
 				<div class="content">
 					<div class="overview content-block roundTop">
 						<h1>{{page.title}}</h1>
-						
+
 						<h3>Concepts</h3>
 						<ul>
+							<li>Forms</li>
 							<li>DataDocument</li>
 							<li>FormFlow</li>
-							<li>Forms</li>
 						</ul>
-				
-						<a name="DataDocument"></a>
-						<h4>DataDocument</h4>
-						<p>This is the XML Document which stores captured form data. It can start as just an empty root node and will be built up automatically as each form is submitted.</p>
-						<p>The DataDocument can be pre-populated using a static template XML file, or the result of a web-service call. This way Rhinoforms can be used for editing existing entities.</p>
-				
-						<h4>FormFlow</h4>
-						<p>A FormFlow is a unit of forms and logic. The FormFlow models what forms are in the set, what part of the DataDocument each form targets and how the forms interact with each other and external web-services.</p>
-						<p>The FormFlow definition is written as a JavaScript object and can be as simple or as complex as you need. It is only used server-side as all the heavy lifting happens there.</p>
 				
 						<h4>Forms</h4>
 						<p>Forms are written in HTML using familiar form and input elements, with some extra markup for validation rules etc. Form validation is supported by the Rhinoforms JavaScript library in the browser and repeated server-side upon form submission.</p>
-						<p>The magic happens when the forms are loaded via the Rhinoforms Servlet, this parses and manipulates the HTML of each form before it gets to the browser. Form input values and placeholders are populated from the DataDocument. Drop-down options and other content can also be generated.</p>
+						<p>The magic happens when the forms are loaded through the Rhinoforms Servlet, this reads the form HTML and uses the DataDocument to inject any existing values into your input elements and any other placeholders. At this stage drop-down options and some other content can be generated. The Rhinoforms Servlet also records everything about your form so that complete validation can be done when the form is submitted.</p>
+
+						<a name="datadocument"></a>
+						<h4>DataDocument</h4>
+						<p>This is the XML Document which stores captured form data. It can start as just root node and will be built up automatically as each form is submitted.</p>
+						<p>The DataDocument can be pre-populated using template file, or the result of a web-service call. This way Rhinoforms can be used to manipulate existing XML entities.</p>
+				
+						<h4>FormFlow</h4>
+						<p>The FormFlow is the model. This includes what sets of forms are available in the form session, what part of the DataDocument each form targets and how the forms interact with each other and external web-services.</p>
+						<p>The FormFlow definition is written in JavaScript and can be as simple or as complex as you need. The FormFlow definition is used by the Rhinoforms Servlet; all the heavy lifting happens there.</p>
+				
 						
 <!--
 				<h3>Quick Start Guide</h3>

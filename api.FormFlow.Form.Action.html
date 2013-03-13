@@ -1,30 +1,30 @@
 ---
 layout: api
 title: FormFlow > Form > Action
-permalink: /api/FormFlow/Form/Action/index.html
+permalink: /api/formflow/form/action/index.html
 ---
 				<div class="content">
 					<div class="overview content-block roundTop">
 						<h1>{{page.title}}</h1>
 						
 						<ul>
-							<li><a href="#Overview">Overview</a></li>
-							<li><a href="#Action_Types">Action Types</a></li>
-							<li><a href="#Jumping_Actions">Jumping Actions</a>
+							<li><a href="#overview">Overview</a></li>
+							<li><a href="#action_types">Action Types</a></li>
+							<li><a href="#jumping_actions">Jumping Actions</a>
 								<ul>
-									<li><a href="#Jumping_Within_the_Current_Form_List">Jumping Within the Current Form List</a></li>
-									<li><a href="#Jumping_Across_Form_Lists">Jumping Across Form Lists</a>
+									<li><a href="#jumping_within_the_current_form_list">Jumping Within the Current Form List</a></li>
+									<li><a href="#jumping_across_form_lists">Jumping Across Form Lists</a>
 										<ul>
-											<li><a href="#Form_Stack">Form Stack</a></li>
+											<li><a href="#form_stack">Form Stack</a></li>
 										</ul>
 									</li>
 								</ul>
 							</li>
-							<li><a href="#Delete_Action">Delete Action</a></li>
-							<li><a href="#Longhand_Declaration">Longhand Declaration</a></li>
+							<li><a href="#delete_action">Delete Action</a></li>
+							<li><a href="#longhand_declaration">Longhand Declaration</a></li>
 						</ul>
 						
-						<a name="Overview"></a>
+						<a name="overview"></a>
 						<h2>Overview</h2>
 						<p>There can be one or many Actions in the Form.actions array.
 						<pre>{
@@ -48,7 +48,7 @@ permalink: /api/FormFlow/Form/Action/index.html
 					
 						<p>Actions are used to navigate the flow and to trigger submissions. Action names should be unique within each array.</p>
 						
-						<a name="Action_Types"></a>
+						<a name="action_types"></a>
 						<h2>Action Types</h2>
 						
 						<p>There are four action types for stepping through a form list: "next", "back", "cancel" and "finish".</p>
@@ -56,12 +56,12 @@ permalink: /api/FormFlow/Form/Action/index.html
 						<p><span class="lingo">"next"</span> - validates the form, stopping for any errors, posts the field values to the server and loads the next form in the list.</p>
 						<p><span class="lingo">"back"</span> - posts the field values to the server without validating and loads the previous form in the list. The values of any fields that were valid will be persisted, any invalid or blank fields will be dropped.</p>
 						<p><span class="lingo">"cancel"</span> - loads the previous form in the list without validating or posting the field values.</p>
-						<p><span class="lingo">"finish"</span> - displays the collected DataDocument. This action is just for convenience during development. To make use of the collected user data you should use a <a href="Submission/">Submission</a>.</p>
+						<p><span class="lingo">"finish"</span> - displays the collected DataDocument. This action is just for convenience during development. To make use of the collected user data you should use a <a href="submission/">Submission</a>.</p>
 
-						<a name="Jumping_Actions"></a>
+						<a name="jumping_actions"></a>
 						<h2>Jumping Actions</h2>
 						
-						<a name="Jumping_Within_the_Current_Form_List"></a>
+						<a name="jumping_within_the_current_form_list"></a>
 						<h3>Jumping Within the Current Form List</h3>
 						
 						<p>An action can jump to a specific form in the current form list using this format:</p>
@@ -102,9 +102,9 @@ permalink: /api/FormFlow/Form/Action/index.html
 }</pre>
 
 						<p>The names of the jumping actions above start with 'jumpTo' but any name is fine.</p>
-						<p>As default jumping actions are of the type "next", this can be overriden using a <a href="#Longhand_Declaration">longhand declaration</a>.</p>
+						<p>As default jumping actions are of the type "next", this can be overriden using a <a href="#longhand_declaration">longhand declaration</a>.</p>
 						
-						<a name="Jumping_Across_Form_Lists"></a>
+						<a name="jumping_across_form_lists"></a>
 						<h3>Jumping Across Form Lists</h3>
 						
 						<p>Jump to a specific form in another list using this format:</p>
@@ -156,21 +156,21 @@ permalink: /api/FormFlow/Form/Action/index.html
 
 						<p>Notice that the 'likes' and 'dislikes' forms navigate back to the 'likesDislikesSummary' using just a simple "next" or "cancel" stepping action. See the Form Stack section below for explanation.
 
-						<a name="Form_Stack"></a>
+						<a name="form_stack"></a>
 						<h4>Form Stack</h4>
 						
 						<p>Rhinoforms maintains a stack of which form lists you have jumpped through.</p>
 						
 						<p>The Form Stack allows for simpler form actions. The Stepping Action "next" should be used in the last form of a list to drop the user back into the current form in the previous form list. Similarly the "back" action should be used in the first form of a list.</p>
 						
-						<a name="Action_Parameters"></a>
+						<a name="action_parameters"></a>
 						<h2>Action Parameters</h2>
 						
 						<p>Parameters can be given to actions using the format:</p>
 						<pre>actionName:actionTarget(paramName:paramValue, paramName:paramValue)</pre>
 						<p>Action parameters can be used to build the target docBase or in a delete action.</p>
 						
-						<a name="Delete_Action"></a>
+						<a name="delete_action"></a>
 						<h2>Delete Action</h2>
 
 						<p>The delete action uses an XPath Expression to delete part of the DataDocument and then reload the current form using the format:</p>
@@ -178,7 +178,7 @@ permalink: /api/FormFlow/Form/Action/index.html
 						<p>Example:</p>
 						<pre>deleteDislikes:delete(xpath:/rootNode/dislikes)</pre>
 						
-						<a name="Longhand_Declaration"></a>
+						<a name="longhand_declaration"></a>
 						<h2>Longhand Declaration</h2>
 						
 						<p>Actions can be expressed in a long-handed way using this format:</p>
@@ -192,9 +192,9 @@ permalink: /api/FormFlow/Form/Action/index.html
 						<p>Only the name property is required.</p>
 						
 						<p><span class="lingo">name</span> - name of the action. Should be unique within this action array. Required.</p>
-						<p><span class="lingo">type</span> - the <a href="#Action_Types">action type</a>. Optional.</p>
-						<p><span class="lingo">target</span> - the <a href="#Jumping_Actions">jump target</a>, i.e. targetFormId or targetListName:targetFormId. Optional.</p>
-						<p><span class="lingo">submission</span> - the <a href="Submission/">submission</a> to be performed during this action. Optional.</p>
+						<p><span class="lingo">type</span> - the <a href="#action_types">action type</a>. Optional.</p>
+						<p><span class="lingo">target</span> - the <a href="#jumping_actions">jump target</a>, i.e. targetFormId or targetListName:targetFormId. Optional.</p>
+						<p><span class="lingo">submission</span> - the <a href="submission/">submission</a> to be performed during this action. Optional.</p>
 						<p><span class="lingo">clearTargetFormDocBase</span> - whether or not to delete all nodes under the target form's docBase. Possible values are "true" or "false". Defaults to "false". Optional.</p>
 						
 						<p>The longhand declaration allows you to mix stepping and jumping behaviour. For example an action of type "cancel" (discard current input) but which also jumps to a specific form (default cancel behaviour is to step to previous form). Example:</p>

@@ -174,3 +174,6 @@ pre {
 	padding: 0;
 	margin: 0;
 }
+.italic {
+	font-style: italic;
+}
