@@ -9,7 +9,7 @@ permalink: /api/formflow/index.html
 						<p>The FormFlow is the declaration of a set of forms and their allowed behaviour.</p>
 						<p>The FormFlow is defined as a JavaScript file containing a single object declaration. Here is a simple flow with just two forms:
 						<pre>{
-  <strong>docBase</strong>: &quot;/rootNode&quot;,
+  <strong>docBase</strong>: &quot;/root&quot;,
   <strong>formLists</strong>: {
     main: [
       {
@@ -37,7 +37,7 @@ permalink: /api/formflow/index.html
 					<h2>Optional FormFlow Properties</h2>
 					
 					<pre>{
-  docBase: &quot;/myRootNode&quot;,
+  docBase: &quot;/myRootElement&quot;,
   <strong>defaultInitalData</strong>: "the-initial-data.xml",
   <strong>libraries</strong>: ["js/my-util-methods.js"],
   formLists: { ... }

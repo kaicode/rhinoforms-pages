@@ -9,7 +9,7 @@ permalink: /api/form/input-field/index.html
 						<p>Rhinoforms Form Fields are plain HTML &lt;input&gt; fields:</p>
 						<pre>&lt;input name=&quot;firstName&quot; type=&quot;text&quot; /&gt;</pre>
 
-						<p>Each field is implicitly bound to a node in the <a href="/api/#datadocument">DataDocument</a> (<a href="#implicit-datadocument-binding">more below</a>). When a form loads any existing values are pulled from the DataDocument. When a form is submitted values are pushed onto the DataDocument.</p>
+						<p>Each field is implicitly bound to an element in the <a href="/api/#datadocument">DataDocument</a> (<a href="#implicit-datadocument-binding">more below</a>). When a form loads any existing values are pulled from the DataDocument. When a form is submitted values are pushed onto the DataDocument.</p>
 
 						<h2>Validation</h2>
 						<p>Field validation rules are defined in the HTML against the input field. There are two ways to define rules;
@@ -28,12 +28,12 @@ permalink: /api/form/input-field/index.html
 
 						<a name="implicit-datadocument-binding" />
 						<h2>Implicit DataDocument Binding</h2>
-						<p>Fields are bound to a node in the <a href="/api/#datadocument">DataDocument</a> implicitly. The path to a field's DataDocument node is resolved using the current docBase and the input field name.</p>
+						<p>Fields are bound to an element in the <a href="/api/#datadocument">DataDocument</a> implicitly. The path to a field's DataDocument element is resolved using the current docBase and the input field name.</p>
 						
 						<p>For example, a form with a docBase of "/myData/address" with the following fields:</p>
 						<pre>&lt;input name=&quot;line1&quot; type=&quot;text&quot; /&gt;
 &lt;input name=&quot;line2&quot; type=&quot;text&quot; /&gt;</pre>
-						<p>Will produce the following nodes:</p>
+						<p>Will produce the following elements:</p>
 						<pre>&lt;myData&gt;
   &lt;address&gt;
     &lt;line1&gt;10 Downing Street&lt;/line1&gt;
@@ -43,9 +43,9 @@ permalink: /api/form/input-field/index.html
 
 						<hr/>
 
-						<p>Nodes deeper than the current docBase can also be produced by using dot notation in the input field name. A form with a docBase of "/profile" and a field:</p>
+						<p>Elements deeper than the current docBase can also be produced by using dot notation in the input field name. A form with a docBase of "/profile" and a field:</p>
 						<pre>&lt;input name=&quot;about.interests&quot; type=&quot;text&quot; /&gt;</pre>
-						<p>Will produce nodes like:</p>
+						<p>Will produce elements like:</p>
 						<pre>&lt;profile&gt;
   &lt;about&gt;
     &lt;interests&gt;Some text&lt;/interests&gt;

@@ -28,7 +28,7 @@ permalink: /api/formflow/form/action/index.html
 						<h2>Overview</h2>
 						<p>There can be one or many Actions in the Form.actions array.
 						<pre>{
-  docBase: &quot;/rootNode&quot;,
+  docBase: &quot;/root&quot;,
   formLists: {
     main: [
       {
@@ -69,7 +69,7 @@ permalink: /api/formflow/form/action/index.html
 						
 						<p>Example:</p>
 						<pre>{
-  docBase: &quot;/rootNode&quot;,
+  docBase: &quot;/root&quot;,
   formLists: {
     main: [
       {
@@ -112,7 +112,7 @@ permalink: /api/formflow/form/action/index.html
 
 						<p>Example:</p>
 						<pre>{
-  docBase: &quot;/rootNode&quot;,
+  docBase: &quot;/root&quot;,
   formLists: {
     main: [
       {
@@ -176,7 +176,7 @@ permalink: /api/formflow/form/action/index.html
 						<p>The delete action uses an XPath Expression to delete part of the DataDocument and then reload the current form using the format:</p>
 						<pre>actionName:delete(xpath:XPathExpression)</pre>
 						<p>Example:</p>
-						<pre>deleteDislikes:delete(xpath:/rootNode/dislikes)</pre>
+						<pre>deleteDislikes:delete(xpath:/root/dislikes)</pre>
 						
 						<a name="longhand_declaration"></a>
 						<h2>Longhand Declaration</h2>
@@ -195,7 +195,7 @@ permalink: /api/formflow/form/action/index.html
 						<p><span class="lingo">type</span> - the <a href="#action_types">action type</a>. Optional.</p>
 						<p><span class="lingo">target</span> - the <a href="#jumping_actions">jump target</a>, i.e. targetFormId or targetListName:targetFormId. Optional.</p>
 						<p><span class="lingo">submission</span> - the <a href="submission/">submission</a> to be performed during this action. Optional.</p>
-						<p><span class="lingo">clearTargetFormDocBase</span> - whether or not to delete all nodes under the target form's docBase. Possible values are "true" or "false". Defaults to "false". Optional.</p>
+						<p><span class="lingo">clearTargetFormDocBase</span> - whether or not to delete all elements under the target form's docBase. Possible values are "true" or "false". Defaults to "false". Optional.</p>
 						
 						<p>The longhand declaration allows you to mix stepping and jumping behaviour. For example an action of type "cancel" (discard current input) but which also jumps to a specific form (default cancel behaviour is to step to previous form). Example:</p>
 						<pre>{

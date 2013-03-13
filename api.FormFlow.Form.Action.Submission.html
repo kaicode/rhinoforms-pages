@@ -13,7 +13,7 @@ permalink: /api/formflow/form/action/submission/index.html
 						<p>The posting happens on the server so is completely secure.</p>
 						<p>Example:</p>
 						<pre>{
-  docBase: &quot;/rootNode&quot;,
+  docBase: &quot;/root&quot;,
   formLists: {
     main: [
       {
@@ -36,7 +36,7 @@ permalink: /api/formflow/form/action/submission/index.html
               }
               method: &quot;post&quot;,
               postTransform: "xslt/address-webservice-response.xsl",
-              resultInsertPoint: &quot;/rootNode/saveAddressResult&quot;
+              resultInsertPoint: &quot;/root/saveAddressResult&quot;
             }</strong>
           }
         ]
@@ -54,7 +54,7 @@ permalink: /api/formflow/form/action/submission/index.html
 						<p><span class="lingo">method</span> - the http method to use. Currently only "get" and "post" are supported. Defaults to "post". Optional.</p>
 						<p><span class="lingo">preTransform</span> - the path of an xsl file which will be used to transform a copy of the DataDocument before posting. The file path should be relative to the location of the form flow. Optional.</p>
 						<p><span class="lingo">postTransform</span> - the path of an xsl file which will be used to transform the body of the http response before adding to the DataDocument. The result should be valid XML. This should only be used with resultInsertPoint. Optional.</p>
-						<p><span class="lingo">resultInsertPoint</span> - the XPath of node on the DataDocument which will be created and have the http response body appended to it. Optional.</p>
+						<p><span class="lingo">resultInsertPoint</span> - the XPath of an element on the DataDocument which will be created and have the http response body appended to it. Optional.</p>
 					</div>
 				</div>
 				
