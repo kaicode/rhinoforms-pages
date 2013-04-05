@@ -20,6 +20,7 @@ permalink: /api/formflow/form/action/index.html
 									</li>
 								</ul>
 							</li>
+							<li><a href="#action_parameters">Action Parameters</a></li>
 							<li><a href="#delete_action">Delete Action</a></li>
 							<li><a href="#longhand_declaration">Longhand Declaration</a></li>
 						</ul>
@@ -166,9 +167,11 @@ permalink: /api/formflow/form/action/index.html
 						<a name="action_parameters"></a>
 						<h2>Action Parameters</h2>
 						
-						<p>Parameters can be given to actions using the format:</p>
-						<pre>actionName:actionTarget(paramName:paramValue, paramName:paramValue)</pre>
 						<p>Action parameters can be used to build the target docBase or in a delete action.</p>
+						<p>Actions can be assigned parameters using the following format:</p>
+						<pre>actionName:actionTarget(paramName:paramValue, paramName:paramValue)</pre>
+						<p>Parameter values can be hardcoded as above or can come as arguments to the action request from the browser. To accept a value from the browser a question mark should be used in the definition:</p>
+						<pre>actionName:actionTarget(paramName:?)</pre>
 						
 						<a name="delete_action"></a>
 						<h2>Delete Action</h2>

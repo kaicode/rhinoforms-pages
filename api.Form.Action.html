@@ -6,8 +6,8 @@ permalink: /api/form/action/index.html
 				<div class="content">
 					<div class="overview content-block roundTop">
 						<h1>{{page.title}}</h1>
-						<p>In Rhinoforms all Form navigation is done using Actions. The actions available to a form and their behaviour is defined in the <a href="/api/formflow/form/action/">Form Flow</a>.</p>
-						<p>An action can be bound to a button or other element using the <strong>rf.action</strong> attribute, it can then be triggered by clicking that element.</p>
+						<p>In Rhinoforms all Form navigation is done using Actions. The actions available to a form is defined in the <a href="/api/formflow/form/action/">Form Flow</a>.</p>
+						<p>An action can be bound to a button or other html element using the <strong>rf.action</strong> attribute, it can then be triggered by clicking that element.</p>
 						<p>An example using a submit button:
 							<pre>&lt;input type=&quot;submit&quot; <strong>rf.action=&quot;next&quot;</strong> value=&quot;Next&quot; /&gt;</pre>
 						</p>
@@ -19,5 +19,16 @@ permalink: /api/form/action/index.html
 						<p>To get the best user experience in your forms it's a good idea to use an input of type 'submit' for the 'next' action. This will allow the user to sumbit the form using the enter key.</p>
 						<p>Use an input of type 'button' for any other actions. Most browsers will trigger the first 'submit' button in the DOM when the user hits enter.</p>
 						
+						<h2>Action Parameters</h2>
+						<p>Most actions don't need parameters, but for those which do parameters the parameter name and value should be given after a question mark:
+							<pre>&lt;a href=&quot;#&quot; rf.action=&quot;editEntity?index=5&quot;&gt;Edit&lt;/a&gt;</pre>
+						</p>
+						<p>Xpaths can be used:
+							<pre>&lt;a href=&quot;#&quot; rf.action=&quot;editEntity?index={{//entity/index}}&quot;&gt;Edit&lt;/a&gt;</pre>
+						</p>
+						<p>Multiple parameters should be seperated with an ampersand:
+							<pre>&lt;a href=&quot;#&quot; rf.action=&quot;editEntity?type=fish&amp;index=5&quot;&gt;Edit&lt;/a&gt;</pre>
+						</p>
+
 					</div>
 				</div>
