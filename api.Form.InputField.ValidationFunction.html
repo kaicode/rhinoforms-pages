@@ -21,6 +21,7 @@ What languages can you speak?
 							</pre>
 							<span class="sidenote">Label tags omitted for code readability.</span>
 						</p>
+						<p>As with Validation Keywords, Validation Functions are run in the browser and again on the server for bullet-proof input validation.</p>
 						
 						<hr/>
 						<h2>Fields Object</h2>
@@ -31,9 +32,15 @@ What languages can you speak?
 								<li>included - (boolean) the result of any rf.includeIf statements. Defaults to true.</li>
 							</ul>
 						</p>
-			
-						<hr/>
-						<p>As with Validation Keywords, Validation Functions are run in the browser and again on the server for bullet-proof input validation.</p>
+						
+						<a name="action-specific-validation"></a>
+						<h2>Action Specific Validation</h2>
+						<p>Different validation rules can be applied depending on which action is being performed. An <strong>action</strong> variable is exposed for this purpose</p>
+						<p>For example you may which to skip validation if you are jumping ahead to another form. In this example we use the <strong>action</strong> variable to only validate if the 'next' action is being performed.</p>
+						<pre>
+  &lt;input name=&quot;firstName&quot; type=&quot;text&quot;
+    rf.validationFunction=&quot;if (<strong>action == 'next'</strong>) { this.validate(&#39;required&#39;); }&quot; /&gt;
+						</pre>
 						
 					</div>
 				</div>
