@@ -177,9 +177,10 @@ permalink: /api/formflow/form/action/index.html
 						<h2>Delete Action</h2>
 
 						<p>The delete action uses an XPath Expression to delete part of the DataDocument and then reload the current form using the format:</p>
-						<pre>actionName:delete(xpath:XPathExpression)</pre>
+						<pre>actionName:delete(xpath=XPathExpression)</pre>
 						<p>Example:</p>
-						<pre>deleteDislikes:delete(xpath:/root/dislikes)</pre>
+						<pre>deleteDislikes:delete(xpath=/root/dislikes)</pre>
+						<p>The detele action can not be used in a longhand declaration.</p>
 						
 						<a name="longhand_declaration"></a>
 						<h2>Longhand Declaration</h2>
