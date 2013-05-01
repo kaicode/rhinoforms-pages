@@ -7,11 +7,19 @@ permalink: /api/form/value-injection/index.html
 	<div class="overview content-block roundTop">
 		<h1>{{page.title}}</h1>
 		
+		<ul>
+			<li><a href="#datadocument_values">DataDocument Values</a></li>
+			<li><a href="#flow_properties_values">Flow Properties Values</a></li>
+		</ul>
+		
+		<a name="datadocument_values"></a>
+		<h2>DataDocument Values</h2>
+		
 		<p>Values from the DataDocument can be injected anywhere into a form page using an XPath Expression in double curly brackets.</p>
 		
 		<p>An absolute XPath (starting with '/') a searching XPath (starting with '//') or a relative XPath (not starting with '/') can be used. A relative XPath will automaticaly be prepended with the current docBase path.</p>
 		
-		<h2>Example: Title and Label Injection</h2>
+		<h3>Example: Title and Label Injection</h3>
 		<p>Values from the DataDocument can be injected into titles or labels. Here an absolute XPath is used.</p>
 		<p>A DataDocument containing:
 			<pre>&lt;myData&gt;
@@ -43,7 +51,7 @@ permalink: /api/form/value-injection/index.html
 		<hr/>
 		
 		<a name="validation_parameter_injection"></a>
-		<h2>Example: Validation Parameter Injection</h2>
+		<h3>Example: Validation Parameter Injection</h3>
 		<p>Values from the DataDocument can be injected into validation expressions. Here a searching XPath is used to match the element name from anywhere in the DataDocument.</p>
 		<p>A DataDocument containing:
 		<pre>&lt;myData&gt;
@@ -64,6 +72,13 @@ permalink: /api/form/value-injection/index.html
   &lt;input type=&quot;submit&quot; rf.action=&quot;next&quot; value=&quot;Next&quot; /&gt;
 
 &lt;/form&gt;</pre>
+
+		<a name="flow_properties_values"></a>
+		<h2>Flow Properties Values</h2>
+
+		<p>Flow Propeties values can be injected anywhere into a form page using double curly brackets containing the property name prefixed by a dollar sign.</p>
+		
+		<pre>&lt;h1&gt;Welcome to <strong>{{  "{{$websiteName" }}}}</strong>&lt;/h1&gt;</pre>
 
 	</div>
 </div>
