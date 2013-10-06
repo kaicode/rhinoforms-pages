@@ -1,71 +1,90 @@
-<!DOCTYPE html>
-<html>
-
-	<head>
-		<meta charset='utf-8' />
-		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-		<meta name="description" content="Rhinoforms: Make Fast, Secure Forms with less code!" />
-
-		<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/rf-project.css">
-		<link rel="shortcut icon" type="image/ico" href="/images/rhinoforms.png" />
-
-		<title>Rhinoforms: Make Fast, Secure Forms with minimal code</title>
-	</head>
-
-	<body id="front_page">
-
-		<!-- HEADER -->
-		<div id="header_wrap" class="outer">
-			<header class="inner">
-				<a id="forkme_banner" href="https://github.com/kaicode/rhinoforms">View on GitHub</a>
-				<div>
-					<a href="/">
-						<h1 id="project_title">Rhinoforms</h1>
-						<img src="images/rhinoforms.png">
-					</a>
-				</div>
-				<h2 id="project_tagline">Make Fast, Secure Forms with minimal code</h2>
-
-					<section id="downloads">
-						<a class="zip_download_link" href="https://github.com/kaicode/rhinoforms/zipball/master">Download this project as a .zip file</a>
-						<a class="tar_download_link" href="https://github.com/kaicode/rhinoforms/tarball/master">Download this project as a tar.gz file</a>
-					</section>
-			</header>
+---
+layout: all
+title: "Rhinoforms: Make Fast, Secure Forms with less code!"
+---
+	<!-- Main component for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<h1>Rhinoforms<img src="images/rhinoforms.png"></h1>
+		<p>Collect and manipulate complex data sets using forms with minimal code.</p>
+		<p>A cleaner, simpler alternative to XForms.</p>
+		<p>
+			<a class="btn btn-lg btn-primary" href="/api/">View the Docs &raquo;</a>
+		</p>
+	</div>
+	<hr class="featurette-divider">
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading">Develop forms  rapidly <span class="text-muted">using familiar HTML.</span></h2>
+			<p class="lead">Use &lt;form&gt; and &lt;input&gt; elements to build your forms.</p>
 		</div>
-
-		<!-- MAIN CONTENT -->
-		<div id="main_content_wrap" class="outer">
-			<section id="main_content" class="inner">
-				<p>Rhinoforms is a secure, lightweight HTML Forms Platform that enables the capture of structured data sets against strict validation using forms with minimal markup.</p>
-				<p><strong>Rhinoforms is designed to support rapid Forms development using HTML and JavaScript - you get server-side validation for free!</strong></p>
+		<div class="col-md-5">
+			<i class="giant-icon icon-bolt"></i>
+		</div>
+	</div>
+	<hr class="featurette-divider">
+	<div class="row featurette featurette-examples">
+		<div class="col-md-5">
+			<i class="giant-icon icon-magic"></i>
+		</div>
+		<div class="col-md-7">
+			<h2 class="featurette-heading"><span class="text-muted">A sprinkling of </span>Rhinoforms syntax adds power.</h2>
+			<p class="lead">For example, simple validation: <pre>&lt;input name="email" <strong>rf.validation="required email"</strong> &gt;</pre></p>
+			<p class="lead">Syntax also enables:
 				<ul>
-					<li>Forms Validated in the Browser for Speed</li>
-					<li>Forms Validated again on the Server for Security (using the same code thanks to Mozilla Rhino)</li>
-					<li>Custom Validation Functions</li>
-					<li>Non-linear Form-Flows</li>
-					<li>Data Captured as XML</li>
-					<li>Integrate with other Web Services</li>
-					<li>Capture Repeating Entities</li>
-					<li>Cleaner, Simpler Alternative to XForms</li>
+					<li>Custom JavaScript Validation Functions</li>
+					<li>Form/Content Generation using your Data</li>
+					<li>Conditional Inclusion Logic</li>
+					<li>Includes</li>
 				</ul>
-				<div id="rf_resources">
-					<h2>Rhinoforms Resources</h2>
-					<h3>Getting Started with Rhinoforms</h3>
-					<ul>
-						<li><a href="docs/rhinoforms-the-basics.html">Rhinoforms: The Basics</a></li>
-						<li><a href="api/">Rhinoforms API Documentation</a></li>
-					</ul>
-				</div>
-			</section>
+			</p>
 		</div>
-
-		<!-- FOOTER -->
-		<div id="footer_wrap" class="outer">
-			<footer class="inner">
-				<p>Rhinoforms created by <a href="https://github.com/kaicode">Kai Kewley</a>&nbsp; Docs published with <a href="http://pages.github.com">GitHub Pages</a></p>
-			</footer>
+	</div>
+	<hr class="featurette-divider">
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading">Ultra Secure.<br> <span class="text-muted">Validation runs in the browser for speed and again on the server for security.</span></h2>
 		</div>
+		<div class="col-md-5">
+			<i class="giant-icon icon-lock"></i>
+		</div>
+	</div>
+	<hr class="featurette-divider">
+	<div class="row featurette">
+		<div class="col-md-5">
+			<i class="giant-icon icon-screenshot"></i>
+		</div>
+		<div class="col-md-7">
+			<h2 class="featurette-heading"><span class="text-muted">Each form can </span>target a specific area of your XML data set.</h2>
+		</div>
+	</div>
+	<hr class="featurette-divider">
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading">Build complex data sets <span class="text-muted">using a Form Flow.</span></h2>
+			<p class="lead">
+			<ul>
 
-	</body>
-</html>
+				<li>Drill down through your Data</li>
+				<li>Capture/Maintain Sub-Entities</li>
+			</ul>
+			</p>
+		</div>
+		<div class="col-md-5">
+			<i class="giant-icon icon-copy"></i>
+		</div>
+	</div>
+	<hr class="featurette-divider">
+	<div class="row featurette">
+		<div class="col-md-5">
+			<i class="giant-icon icon-sitemap"></i>
+		</div>
+		<div class="col-md-7">
+			<h2 class="featurette-heading"><span class="text-muted">Use External Web Services to </span>Load, Enrich or Persist your data.</h2>
+		</div>
+	</div>
+
+	<script>
+		function setMenuFocus() {
+			$('.nav .home').addClass('active');
+		}
+	</script>

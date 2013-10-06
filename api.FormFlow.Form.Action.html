@@ -25,7 +25,7 @@ permalink: /api/formflow/form/action/index.html
 							<li><a href="#longhand_declaration">Longhand Declaration</a></li>
 						</ul>
 						
-						<a name="overview"></a>
+						<a name="overview" class="anchor"></a>
 						<h2>Overview</h2>
 						<p>There can be one or many Actions in the Form.actions array.
 						<pre>{
@@ -49,7 +49,7 @@ permalink: /api/formflow/form/action/index.html
 					
 						<p>Actions are used to navigate the flow and to trigger submissions. Action names should be unique within each array.</p>
 						
-						<a name="action_types"></a>
+						<a name="action_types" class="anchor"></a>
 						<h2>Action Types</h2>
 						
 						<p>There are four action types for stepping through a form list: "next", "back", "cancel" and "finish".</p>
@@ -59,10 +59,10 @@ permalink: /api/formflow/form/action/index.html
 						<p><span class="lingo">"cancel"</span> - loads the previous form in the list without validating or posting the field values.</p>
 						<p><span class="lingo">"finish"</span> - displays the collected DataDocument. This action is just for convenience during development. To make use of the collected user data you should use a <a href="submission/">Submission</a>.</p>
 
-						<a name="jumping_actions"></a>
+						<a name="jumping_actions" class="anchor"></a>
 						<h2>Jumping Actions</h2>
 						
-						<a name="jumping_within_the_current_form_list"></a>
+						<a name="jumping_within_the_current_form_list" class="anchor"></a>
 						<h3>Jumping Within the Current Form List</h3>
 						
 						<p>An action can jump to a specific form in the current form list using this format:</p>
@@ -105,7 +105,7 @@ permalink: /api/formflow/form/action/index.html
 						<p>The names of the jumping actions above start with 'jumpTo' but any name is fine.</p>
 						<p>As default jumping actions are of the type "next", this can be overriden using a <a href="#longhand_declaration">longhand declaration</a>.</p>
 						
-						<a name="jumping_across_form_lists"></a>
+						<a name="jumping_across_form_lists" class="anchor"></a>
 						<h3>Jumping Across Form Lists</h3>
 						
 						<p>Jump to a specific form in another list using this format:</p>
@@ -157,14 +157,14 @@ permalink: /api/formflow/form/action/index.html
 
 						<p>Notice that the 'likes' and 'dislikes' forms navigate back to the 'likesDislikesSummary' using just a simple "next" or "cancel" stepping action. See the Form Stack section below for explanation.
 
-						<a name="form_stack"></a>
+						<a name="form_stack" class="anchor"></a>
 						<h4>Form Stack</h4>
 						
 						<p>Rhinoforms maintains a stack of which form lists you have jumpped through.</p>
 						
 						<p>The Form Stack allows for simpler form actions. The Stepping Action "next" should be used in the last form of a list to drop the user back into the current form in the previous form list. Similarly the "back" action should be used in the first form of a list.</p>
 						
-						<a name="action_parameters"></a>
+						<a name="action_parameters" class="anchor"></a>
 						<h2>Action Parameters</h2>
 						
 						<p>Action parameters can be used to build the target docBase or in a delete action.</p>
@@ -173,7 +173,7 @@ permalink: /api/formflow/form/action/index.html
 						<p>Parameter values can be hardcoded as above or can come as arguments to the action request from the browser. To accept a value from the browser a question mark should be used in the definition:</p>
 						<pre>actionName:actionTarget(paramName:?)</pre>
 						
-						<a name="delete_action"></a>
+						<a name="delete_action" class="anchor"></a>
 						<h2>Delete Action</h2>
 
 						<p>The delete action uses an XPath Expression to delete part of the DataDocument and then reload the current form using the format:</p>
@@ -182,7 +182,7 @@ permalink: /api/formflow/form/action/index.html
 						<pre>deleteDislikes:delete(xpath=/root/dislikes)</pre>
 						<p>The detele action can not be used in a longhand declaration.</p>
 						
-						<a name="longhand_declaration"></a>
+						<a name="longhand_declaration" class="anchor"></a>
 						<h2>Longhand Declaration</h2>
 						
 						<p>Actions can be expressed in a long-handed way using this format:</p>

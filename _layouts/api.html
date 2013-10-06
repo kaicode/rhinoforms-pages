@@ -1,94 +1,56 @@
-<!DOCTYPE html>
-<html>
+---
+layout: all
+subtitle: | Rhinoforms API
+---
 
-	<head>
-		<meta charset='utf-8' />
-		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-		<meta name="description" content="Rhinoforms: Make Fast, Secure Forms with less code!" />
-
-		<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/rf-project.css">
-		<link rel="shortcut icon" type="image/ico" href="/images/rhinoforms.png" />
-
-		<title>{{page.title}} - Rhinoforms API</title>
-	</head>
-
-	<body>
-
-		<!-- HEADER -->
-		<div id="header_wrap" class="outer">
-				<header class="inner">
-					<a id="forkme_banner" href="https://github.com/kaicode/rhinoforms">View on GitHub</a>
-					<a href="/">
-						<h1 id="project_title">Rhinoforms</h1>
-						<img src="/images/rhinoforms.png">
-					</a>
-				</header>
+	<!-- MAIN CONTENT -->
+	<div class="row">
+		<div class="col-md-3">
+			<div class="side_menu">
+				<h2 class="roundTop section-title">Rhinoforms API</h2>
+				<ul class="roundBottom section">
+					<li><a href="/api/">Overview</a></li>
+					<li><a href="/api/formflow/">FormFlow (JS)</a>
+						<ul>
+							<li><a href="/api/formflow/form/">Form</a>
+								<ul>
+									<li><a href="/api/formflow/form/action/">Action</a>
+										<ul>
+											<li><a href="/api/formflow/form/action/submission/">Submission</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="/api/form/">Form (HTML)</a>
+						<ul>
+							<li><a href="/api/form/input-field/">Input Field</a>
+								<ul>
+									<li><a href="/api/form/input-field/validation-keyword/">Validation Keyword</a></li>
+									<li><a href="/api/form/input-field/validation-function/">Validation Function</a></li>
+								</ul>
+							</li>
+							<li><a href="/api/form/action/">Action</a></li>
+							<li><a href="/api/form/include/">Include</a></li>
+							<li><a href="/api/form/value-injection/">Value Injection</a></li>
+						</ul>
+					</li>
+				<!--
+					<li>Extending Rhinoforms</li>
+					<li>Embedding Rhinoforms</li>
+				-->
+				</ul>
+			</div>
 		</div>
-		
-		<!-- SECTION TITLE -->
-		<div id="section_title_wrap" class="outer">
-			<section id="section_title" class="inner">
-				<h2>Rhinoforms API</h2>
-			</section>
-		</div>
-		
-		<!-- MAIN CONTENT -->
-		<div id="main_content_wrap" class="outer">
-			<section id="main_content" class="inner">
-				
-				<div class="side_menu">
-					<h2 class="roundTop section-title">Rhinoforms API</h2>
-					<ul class="roundBottom section">
-						<li><a href="/api/">Overview</a></li>
-						<li><a href="/api/formflow/">FormFlow (JS)</a>
-							<ul>
-								<li><a href="/api/formflow/form/">Form</a>
-									<ul>
-										<li><a href="/api/formflow/form/action/">Action</a>
-											<ul>
-												<li><a href="/api/formflow/form/action/submission/">Submission</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href="/api/form/">Form (HTML)</a>
-							<ul>
-								<li><a href="/api/form/input-field/">Input Field</a>
-									<ul>
-										<li><a href="/api/form/input-field/validation-keyword/">Validation Keyword</a></li>
-										<li><a href="/api/form/input-field/validation-function/">Validation Function</a></li>
-									</ul>
-								</li>
-								<li><a href="/api/form/action/">Action</a></li>
-								<li><a href="/api/form/include/">Include</a></li>
-								<li><a href="/api/form/value-injection/">Value Injection</a></li>
-							</ul>
-					<!--
-						<li>Event Hook</li>
-						<li>DebugBar</li>
-					-->
-						</li>
-					<!--
-						<li>Extending Rhinoforms</li>
-						<li>Embedding Rhinoforms</li>
-					-->
-					</ul>
-				</div>
-				
-				{{ content }}
-				
-			</section>
+		<div class="col-md-9">
+			{{ content }}
 		</div>
 
-		<!-- FOOTER	-->
-		<div id="footer_wrap" class="outer">
-			<footer class="inner">
-				<p>Rhinoforms created by <a href="https://github.com/kaicode">Kai Kewley</a>&nbsp; Docs published with <a href="http://pages.github.com">GitHub Pages</a></p>
-			</footer>
-		</div>
+	</div>
 
-	</body>
-</html>
+	<script>
+		function setMenuFocus() {
+			$('.nav .api').addClass('active');
+		}
+	</script>
