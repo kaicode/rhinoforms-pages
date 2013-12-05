@@ -15,7 +15,7 @@ permalink: /api/form/input-field/index.html
 						<p>Field validation rules are defined in the HTML against the input field. There are two ways to define rules;
 							<ul>
 								<li><a href="validation-keyword/">Validation Keywords</a> - cover the basics - required, email etc.</li>
-								<li>Validation Functions - more complex, can reference other fields.</li>
+								<li><a href="validation-function/">Validation Functions</a> - more complex, can reference other fields.</li>
 							</ul>
 						</p>
 						<h3>When Validation Happens</h3>
@@ -28,7 +28,7 @@ permalink: /api/form/input-field/index.html
 
 						<a name="implicit-datadocument-binding" class="anchor"></a>
 						<h2>Implicit DataDocument Binding</h2>
-						<p>Fields are bound to an element in the <a href="/api/#datadocument">DataDocument</a> implicitly. The path to a field's DataDocument element is resolved using the current docBase and the input field name.</p>
+						<p>Fields are bound to an element in the <a href="/api/#datadocument">DataDocument</a> implicitly. The path to a field's DataDocument element is resolved using the current <a href="/api/formflow/form/#docBase">docBase</a> and the input field name.</p>
 						
 						<p>For example, a form with a docBase of "/myData/address" with the following fields:</p>
 						<pre>&lt;input name=&quot;line1&quot; type=&quot;text&quot; /&gt;
@@ -43,7 +43,8 @@ permalink: /api/form/input-field/index.html
 
 						<hr/>
 
-						<p>Elements deeper than the current docBase can also be produced by using dot notation in the input field name. A form with a docBase of "/profile" and a field:</p>
+						<p>Nested elements can be created using dot notation in the input field name.</p>
+						<p>A form with a docBase of "/profile" and a field:</p>
 						<pre>&lt;input name=&quot;about.interests&quot; type=&quot;text&quot; /&gt;</pre>
 						<p>Will produce elements like:</p>
 						<pre>&lt;profile&gt;

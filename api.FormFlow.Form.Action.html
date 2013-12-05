@@ -52,12 +52,13 @@ permalink: /api/formflow/form/action/index.html
 						<a name="action_types" class="anchor"></a>
 						<h2>Action Types</h2>
 						
-						<p>There are four action types for stepping through a form list: "next", "back", "cancel" and "finish".</p>
+						<p>There are four predefined action types for navigation and one for deleting.</p>
 						
 						<p><span class="lingo">"next"</span> - validates the form, stopping for any errors, posts the field values to the server and loads the next form in the list.</p>
 						<p><span class="lingo">"back"</span> - posts the field values to the server without validating and loads the previous form in the list. The values of any fields that were valid will be persisted, any invalid or blank fields will be dropped.</p>
 						<p><span class="lingo">"cancel"</span> - loads the previous form in the list without validating or posting the field values.</p>
 						<p><span class="lingo">"finish"</span> - displays the collected DataDocument. This action is just for convenience during development. To make use of the collected user data you should use a <a href="submission/">Submission</a>.</p>
+						<p><span class="lingo">"delete"</span> - deletes part of the DataDocument, see <a href="#delete_action">Delete Action</a>.</p>
 
 						<a name="jumping_actions" class="anchor"></a>
 						<h2>Jumping Actions</h2>
@@ -168,7 +169,7 @@ permalink: /api/formflow/form/action/index.html
 						<h2>Action Parameters</h2>
 						
 						<p>Action parameters can be used to build the target docBase or in a delete action.</p>
-						<p>Actions can be assigned parameters using the following format:</p>
+						<p>Actions can be assigned parameters in the FormFlow using the following format:</p>
 						<pre>actionName:actionTarget(paramName:paramValue, paramName:paramValue)</pre>
 						<p>Parameter values can be hardcoded as above or can come as arguments to the action request from the browser. To accept a value from the browser a question mark should be used in the definition:</p>
 						<pre>actionName:actionTarget(paramName:?)</pre>

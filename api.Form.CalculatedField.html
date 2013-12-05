@@ -1,0 +1,23 @@
+---
+layout: api
+title: Calculated Field
+permalink: /api/form/calculated-field/index.html
+---
+<div class="content">
+  <div class="overview content-block roundTop">
+    <h1>{{page.title}}</h1>
+    <p>The value of a field can be calculated in real-time in the browser as the user interacts with the form.</p>
+  	<p>The value is calculated and displayed in the browser for fast feedback but recalculated on the server, to prevent client-side manipulation, before insertion into the DataDocument.</p>
+
+    <p>A calculated field is specified using the <strong>rf.calculated</strong> attribute. This attribute value should be a function which returns the calculated value. The function has access to the fields map.</p>
+	<p>Calculated fields are evaluated in the order that they appear in the form.</p>
+    <pre>&lt;form rhinoforms=&quot;true&quot;&gt;
+  &lt;input name=&quot;date-of-birth&quot; type=&quot;text&quot; /&gt;
+  &lt;!-- Calculate age --&gt;
+  &lt;!-- Seconds in a year is 31536000000 --&gt;
+  <strong>&lt;input name=&quot;age&quot; type=&quot;text&quot; disabled="disabled"
+    rf.calculated="Math.floor((new Date() - new Date(fields.date-of-birth.value)) / 31536000000)" /&gt;</strong>
+  &lt;input type=&quot;submit&quot; rf.action=&quot;next&quot; value=&quot;Next&quot; /&gt;
+&lt;/form&gt;</pre>
+  </div>
+</div>
